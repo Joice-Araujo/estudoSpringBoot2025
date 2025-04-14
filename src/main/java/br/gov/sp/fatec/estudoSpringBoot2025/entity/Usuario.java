@@ -1,5 +1,7 @@
 package br.gov.sp.fatec.estudoSpringBoot2025.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +22,7 @@ public class Usuario {
     private String nome;
 
     @Column(name = "usr_senha")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String senha;
 
     public Usuario() {}
